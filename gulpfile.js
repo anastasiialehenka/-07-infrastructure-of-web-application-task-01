@@ -9,14 +9,14 @@ const eslint = require('gulp-eslint');
 
 gulp.task ('bundle', function () {
     return gulp.src(['*.js', '!gulpfile.js'])
-        .pipe(concat('storage.js'))
-        .pipe(minify({
-            noSource: true,
-            ext:{
-                src:'.js',
-                min:'.min.js'
-            },
-        }))
+        .pipe(concat('storage.min.js'))
+        // .pipe(minify({
+        //     noSource: true,
+        //     ext:{
+        //         src:'.js',
+        //         min:'.min.js'
+        //     },
+        // }))
         .pipe(gulp.dest('dist'));
 });
 

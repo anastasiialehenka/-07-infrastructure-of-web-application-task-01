@@ -15,9 +15,14 @@ function getFunc(key, storageType, callback) {
                 console.log(new Error('Callback param required'));
             }
         } else {
-            record = JSON.parse(window[storageType][key]);
-            if (record.type === 'blob') {
-                record = dataURItoBlob(record.text);
+            if (window[storageType][key]) {
+                record = JSON.parse(window[storageType][key]);
+                if (record.type === 'blob') {
+                    record = dataURItoBlob(record.text);
+                }
+            }
+            else {
+                console.log(new Error('No item with such key'));
             }
             asyncCallback(callback, record);
         }

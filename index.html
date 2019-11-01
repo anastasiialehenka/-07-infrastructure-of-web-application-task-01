@@ -26,8 +26,8 @@
 
     Storage.get('myKey2', Storage.INDEXED_DB); // throws exception -  callback is required
     Storage.get('myKey2', Storage.INDEXED_DB, (value) => { console.log('myKey2', value); }); // asynchronously logs 'myKey2' and 'value'
-    Storage.save('myKey3', blob, Storage.INDEXED_DB, () => { console.log('saved'); });
-    Storage.save('myKey4', 1, Storage.INDEXED_DB, () => { console.log('saved'); });
+    Storage.save('myKey3', 1, Storage.INDEXED_DB, () => { console.log('saved'); });
+    Storage.save('myKey4', blob, Storage.INDEXED_DB, () => { console.log('saved'); });
     Storage.getAll(Storage.INDEXED_DB, (obj) => console.log(obj));
     Storage.save('myKey5', blob, Storage.LOCAL_STORAGE);
     Storage.save('myKey6', 1, Storage.LOCAL_STORAGE);
