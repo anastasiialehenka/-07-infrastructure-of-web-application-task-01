@@ -39,7 +39,6 @@ function saveFunc(key, value, storageType, callback) {
                         type: 'blob'
                     };
                     strValue = JSON.stringify(obj);
-                    console.log(strValue);
                     // eslint-disable-next-line max-len
                     window[storageType].setItem(key, strValue);
                     asyncCallback(callback);
