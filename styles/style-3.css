@@ -1,0 +1,165 @@
+.move-boat:after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: url('../images/steam.png') no-repeat;
+  background-size: 120px;
+  position: absolute;
+  top: -50%;
+  left: -5%;
+  opacity: 0;
+}
+.move-boat{
+  position: absolute;
+  bottom:10px;
+  -webkit-transition: left 2s linear;
+  transition: left 2s ease-in;
+  left:0;
+}
+.wave {
+  position: absolute;
+  bottom:0;
+  width: 1600px;
+  height:150px;
+  left:-50%;
+}
+.sun {
+  position: absolute;
+  right:0;
+}
+.cloud {
+  position: absolute;
+  right:-150px;
+  z-index:1;
+}
+/* Write your code */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes background {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: #262F37;
+  }
+}
+
+@keyframes clouds {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes smoke {
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+    left: 0;
+  }
+
+  50% {
+    transform: translateY(15%);
+    opacity: 0;
+    left: 30%;
+  }
+
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+    left: 50%;
+  }
+
+  100% {
+    transform: translateY(15%);
+    opacity: 0;
+    left: 75%;
+  }
+}
+
+@keyframes boat {
+  25% {
+    transform: translateY(0) translateX(25%) rotate(-15deg);
+  }
+
+  50% {
+    transform: translateY(15%) translateX(50%) rotate(15deg);
+  }
+
+  75% {
+    transform: translateY(0) translateX(75%) rotate(-15deg);
+  }
+
+  100% {
+    transform: translateY(15%) translateX(100%) rotate(15deg);
+  }
+}
+
+.animation-box:hover .sun {
+  animation-duration: 0.75s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+.animation-box:hover .wave {
+  animation-duration: 0.75s;
+  animation-name: wave;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.animation-box:hover .boat {
+  animation-duration: 1.5s;
+  animation-name: boat;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.animation-box:hover .cloud {
+  animation-duration: 0.75s;
+  animation-name: clouds;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.animation-box:hover {
+  animation-duration: 0.75s;
+  animation-name: background;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.animation-box:hover .move-boat:after {
+  animation-duration: 1.5s;
+  animation-name: smoke;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
